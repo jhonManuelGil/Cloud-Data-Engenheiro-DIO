@@ -1,1 +1,0 @@
-CREATE DATABASE prin_aula;

@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS banco(
+    numero INTEGER NOT NULL,
+    nome VARCHAR(50) NOT NULL,
+    activo BOOLEAN NOT NULL DEFAULT TRUE,
+    data_criacao timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (numro)
+
+);
