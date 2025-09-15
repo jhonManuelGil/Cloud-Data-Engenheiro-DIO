@@ -43,6 +43,8 @@ CREATE Table conta_corrente(
     FOREIGN KEY (cliente_numero) REFERENCES cliente (numero)
 );
 
+--SELECT * FROM tipo_transacao
+
 
 CREATE TABLE tipo_transacao(
     id SMAllSERIAL PRIMARY KEY,
