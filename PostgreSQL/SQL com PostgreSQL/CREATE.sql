@@ -15,6 +15,7 @@ CREATE TABLE cliente (
     municipio VARCHAR(30),
     uf VARCHAR(2),
     observacoes TEXT,
+	--primary key
     CONSTRAINT pk_cln_idcliente PRIMARY KEY (idcliente)
 );
 
@@ -106,8 +107,8 @@ values (1, 'Manuel', '88828383821', '35246', '2001-01-30', 'M', 'Estudante', 'Br
 (80, 'Priscila Ferreira', '81234567890', '159357486', '1996-09-30', 'F', 'Atriz', 'Brasileira', 'Rua Espírito Santo', NULL, 'Casa 10', 'Centro', 'Campo Grande', 'MS'),
 (81, 'Lucas Almeida', '12345678901', '123456789', '1988-05-14', 'M', 'Engenheiro', 'Brasileira', 'Rua das Flores', 101, 'Apto 12', 'Centro', 'São Paulo', 'SP');
 --- para saber que datos estan faltante
--- SELECT *
--- FROM cliente
+SELECT *
+FROM cliente
 -- WHERE cpf IS NULL;
 
 
@@ -153,22 +154,19 @@ select * from cliente limit 3;
 
 select * from cliente;
 
--- consultas
+-- consultas de dados
 
 select nome, data_nascimento from cliente where data_nascimento > '1991-09-17';
 
 -- em o nome onde esteja a letra C
 select nome from cliente where nome like '%C%';
 
-
 -- em o nome comense letra C
 select nome from cliente where nome like 'C%';
 
 -- em o nome ternime a letra C
 select nome from cliente where nome like '%C';
-
 select nome, data_nascimento from cliente;
-
 select nome, data_nascimento from cliente where data_nascimento between '1983-01-25' and '1997-02-07';
 
 select nome, data_nascimento from cliente where data_nascimento between '1997-08-19' and '2001-01-30';
@@ -178,7 +176,6 @@ select nome, data_nascimento from cliente where data_nascimento is null;
 select nome from cliente order by nome asc;
 select nome from cliente order by nome desc;
 select nome from cliente where nome like '%C';
-
 
 select nome, genero, profissao from cliente order by nome, genero, profissao desc;
 select nome from cliente where nome like '%r%';
@@ -195,8 +192,10 @@ select nome, municipio from cliente where municipio like 'São Paulo';
 select nome, data_nascimento from cliente where data_nascimento between '1983-01-25' and '1997-02-07';
 select nome || ' - ' || logradouro || ' - ' || numero || ' - ' ||complemento || ' - ' || bairro || ' - ' || municipio || ' - ' || uf from cliente;
 
-update cliente set nome = 'teste' where idcliente = 1;
-update cliente set nome = 'jhon Whi', genero = 'M', numero = '118' where idcliente = 2;
+
+-- para actualizar
+update cliente set nome = 'Jhon Whi' where idcliente = 1;
+update cliente set nome = 'Adriano jhon Whi', genero = 'M', numero = '118' where idcliente = 2;
 insert into cliente (idcliente, nome) values (82, 'Miquel Aponte');
 delete from cliente where idcliente = 82;
 

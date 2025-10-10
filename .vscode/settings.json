@@ -1,3 +1,10 @@
 {
-  "dataworkspace.excludedProjects": ["JhonGil/JhonGil.sqlproj"]
+  "dataworkspace.excludedProjects": [
+    "JhonGil/JhonGil.sqlproj"
+  ],
+  "python.testing.pytestArgs": [
+    "PostgreSQL"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true
 }
