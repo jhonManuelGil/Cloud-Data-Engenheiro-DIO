@@ -6,5 +6,19 @@
     "PostgreSQL"
   ],
   "python.testing.unittestEnabled": false,
-  "python.testing.pytestEnabled": true
+  "python.testing.pytestEnabled": true,
+  "sqltools.connections": [
+    {
+      "ssh": "Disabled",
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "askForPassword": true,
+      "driver": "PostgreSQL",
+      "database": "praticasIngData",
+      "name": "PostgreSQL",
+      "username": "postgres",
+      "socketPath": "Auto-detected PostgreSQL 17 installation with the data directory at C:\\Program Files\\PostgreSQL\\17\\data"
+    }
+  ]
 }
