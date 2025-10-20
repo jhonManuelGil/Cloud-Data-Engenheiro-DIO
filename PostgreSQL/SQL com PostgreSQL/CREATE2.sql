@@ -296,17 +296,15 @@ select * from bairro;
 
 
 alter table cliente drop idprofissao;
-alter table cliente add idprofissao integer;
-alter table cliente add constraint fk_cln_idprofissao foreign key (idprofissao) references profissao (idprofissao);
-
-alter table cliente add constraint fk_cln_idnacionalidade foreign key (idnacionalidade) references nacionalidade (idnacionalidade);
-
-alter table cliente add constraint fk_cln_idcomplemento foreign key (idcomplemento) references complemento (idcomplemento);
-
-alter table cliente add constraint fk_cln_idbairro foreign key (idbairro) references bairro (idbairro);
+alter table cliente add idcomplemento integer;
 
 
 
+
+
+
+alter table cliente rename column nacionalidade to idnacionalidade;
+alter table cliente alter column idnacionalidade type integer;
 -- ====================================================================
 
 /*
@@ -323,22 +321,115 @@ Null --------> 11, 14
 alter table cliente rename column profissao to idprofissao;
 alter table cliente alter column idprofissao type integer;
 
-
+alter table cliente drop profissao;
+alter table cliente add idprofissao;
+alter table cliente alter column idprofissao type integer;
+alter table cliente add constraint fk_cln_idprofissao foreign key (idprofissao) references profissao (idprofissao);
 update cliente set idprofissao = 1 where idcliente in (1, 9, 10, 12, 15, 17);
 update cliente set idprofissao = 2 where idcliente = 2;
 update cliente set idprofissao = 3 where idcliente = 3;
 update cliente set idprofissao = 4 where idcliente in (4, 5);
 update cliente set idprofissao = 5 where idcliente in (6, 7, 8, 13);
+select * from profissao;
 
+alter table cliente drop nacionalidade;
+alter table cliente add idnacionalidade;
+alter table cliente alter column idnacionalidade type integer;
+alter table cliente add constraint fk_cln_idnacionalidade foreign key (idnacionalidade) references nacionalidade (idnacionalidade);
+update cliente set idnacionalidade = 1 where idcliente in (1,2,3,4,6,10,11,14);
+update cliente set idnacionalidade = 2 where idcliente in (5,7);
+update cliente set idnacionalidade = 3 where idcliente = 8;
+update cliente set idnacionalidade = 4 where idcliente in (9,13);
+select * from nacionalidade;
+
+alter table cliente drop complemento;
+alter table cliente add idcomplemento;
+alter table cliente alter column idcomplemento type integer;
+alter table cliente add constraint fk_cln_idcomplemento foreign key (idcomplemento) references complemento (idcomplemento);
+update cliente set idcomplemento = 1 where idcliente in (1,4,9,13);
+update cliente set idcomplemento = 2 where idcliente in (2,3,7);
+select * from complemento;
+
+   
+alter table cliente drop bairro;
+alter table cliente add idbairro;
+alter table cliente alter column idbairro type integer;
+alter table cliente add constraint fk_cln_idbairro foreign key (idbairro) references bairro (idbairro);
+update cliente set idbairro = 1 where idcliente in (1,12,13);
+update cliente set idbairro = 2 where idcliente in (2,3,6,8,9);
+update cliente set idbairro = 3 where idcliente in (4,5);
+update cliente set idbairro = 4 where idcliente = 7;
+select * from bairro;
+ 
 
 select * from profissao;
 select * from cliente;
 -- nao se pode apagar pela chave incorporada viola as reflas tem que fazer a desvinculação do cliente depois sem apaga
 delete from profissao where idprofissao = 1;
+
 -- ejem
 insert into profissao (idprofissao, nome) values (1, 'teste');
 delete from profissao where idprofissao = 10;
 -- se apaga por não ter chave de um cliente vinculado a ela e para poder apagar 
+
+select * from cliente;
+
+create table uf (
+   iduf integer not null,
+   nome varchar(30) not null,
+   sigla char(2) not null,
+
+   constraint pk_idunidade_federacao primary key (iduf),
+   constraint un_ufd_nome unique (nome),
+   constraint uni_ufd_sigla unique (sigla)
+);
+
+select * from uf;
+
+insert into uf (iduf, nome, sigla) values (1, 'Santa Catarina', 'SC');
+insert into uf (iduf, nome, sigla) values (2, 'Parana', 'PR');
+insert into uf (iduf, nome, sigla) values (3, 'São Paulo', 'SP');
+insert into uf (iduf, nome, sigla) values (4, 'Minas Gerais', 'MR');
+insert into uf (iduf, nome, sigla) values (5, 'Rio Grande do Sul', 'RS');
+insert into uf (iduf, nome, sigla) values (6, 'Rio de Janeiro', 'RJ');
+
+
+
+create table municipio (
+    idmunicipio integer not null,
+	nome varchar(30) not null,
+	iduf integer not null,
+
+	constraint pk_mnc_idmunicipio primary key (idmunicipio),
+	constraint un_mnc_nome unique (nome),
+	constraint fk_mnc_iduf foreign  key (iduf) references uf (iduf)
+);
+
+
+select * from municipio;
+
+insert into municipio (idmunicipio, nome, iduf) values (1, 'Porto União', 1);
+insert into municipio (idmunicipio, nome, iduf) values (2, 'Canoinhas', 1);
+insert into municipio (idmunicipio, nome, iduf) values (3, 'Porto Vitória', 2); 
+insert into municipio (idmunicipio, nome, iduf) values (4, 'General Cardeiro', 2); 
+insert into municipio (idmunicipio, nome, iduf) values (5, 'São Paulo', 3);
+insert into municipio (idmunicipio, nome, iduf) values (6, 'Rio de Janeiro', 6);
+insert into municipio (idmunicipio, nome, iduf) values (7, 'Uberlândia', 4);
+insert into municipio (idmunicipio, nome, iduf) values (8, 'Porto Alegre', 5);
+insert into municipio (idmunicipio, nome, iduf) values (9, 'União da Vitoria', 2);
+
+
+select * from municipio;
+select * from cliente;
+
+alter table cliente drop municipio;
+alter table cliente drop uf;
+alter table cliente add idmunicipio integer;
+alter table cliente add constraint fk_cliente_idmunicipio foreign key (idmunicipio) references municipio (idmunicipio);
+
+
+
+
 
 
 
