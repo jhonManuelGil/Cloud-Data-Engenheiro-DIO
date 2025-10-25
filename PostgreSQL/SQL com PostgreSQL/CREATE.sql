@@ -109,29 +109,29 @@ values (1, 'Manuel', '88828383821', '35246', '2001-01-30', 'M', 'Estudante', 'Br
 --- para saber que datos estan faltante
 SELECT *
 FROM cliente
--- WHERE cpf IS NULL;
+WHERE cpf IS NULL;
 
 
--- SELECT 
---     COUNT(*) FILTER (WHERE cpf IS NULL) AS cpf_faltando,
---     COUNT(*) FILTER (WHERE data_nascimento IS NULL) AS nasc_faltando,
---     COUNT(*) FILTER (WHERE profissao IS NULL) AS profissao_faltando,
---     COUNT(*) FILTER (WHERE numero IS NULL) AS numero_faltando,
---     COUNT(*) FILTER (WHERE bairro IS NULL) AS bairro_faltando,
---     COUNT(*) FILTER (WHERE uf IS NULL) AS uf_faltando,
---     COUNT(*) FILTER (WHERE logradouro IS NULL) AS logradouro_faltando
--- FROM cliente;
+SELECT 
+    COUNT(*) FILTER (WHERE cpf IS NULL) AS cpf_faltando,
+    COUNT(*) FILTER (WHERE data_nascimento IS NULL) AS nasc_faltando,
+    COUNT(*) FILTER (WHERE profissao IS NULL) AS profissao_faltando,
+    COUNT(*) FILTER (WHERE numero IS NULL) AS numero_faltando,
+    COUNT(*) FILTER (WHERE bairro IS NULL) AS bairro_faltando,
+    COUNT(*) FILTER (WHERE uf IS NULL) AS uf_faltando,
+    COUNT(*) FILTER (WHERE logradouro IS NULL) AS logradouro_faltando
+FROM cliente;
 
 
--- SELECT *
--- FROM cliente
--- WHERE cpf IS NULL
---    OR data_nascimento IS NULL
---    OR profissao IS NULL
---    OR numero IS NULL
---    OR bairro IS NULL
---    OR uf IS NULL
---    OR logradouro IS NULL;
+SELECT *
+FROM cliente
+WHERE cpf IS NULL
+   OR data_nascimento IS NULL
+   OR profissao IS NULL
+   OR numero IS NULL
+   OR bairro IS NULL
+   OR uf IS NULL
+   OR logradouro IS NULL;
 
 alter table cliente rename column data_nascimento to "data nascimento";
 alter table cliente rename column profissao to "profissao";
@@ -213,106 +213,316 @@ select nome, data_nascimento from cliente where cliente data_nascimento  between
 -- 6. Apagra de cliente Sérgio Oliveira
 select nome, idprofissao from cliente where idprofissao is NULL;
 
+DROP TABLE complemento;
+DROP TABLE bairro;
+DROP TABLE nacionalidade;
+
+
+select * from bairro;
+
+-- crasão de tabela ====================================================================
+create table profissao (
+    idprofissao integer not null,
+	nome varchar(30),
+
+	constraint pk_prf_idprofissao primary key (idprofissao),
+	constraint un_prf_nome unique (nome)
+);
+
+insert into profissao (idprofissao, nome) values (1, 'Estudante');
+insert into profissao (idprofissao, nome) values (2, 'Engenheiro');
+insert into profissao (idprofissao, nome) values (3, 'Pedreiro');
+insert into profissao (idprofissao, nome) values (4, 'Jornalista');
+insert into profissao (idprofissao, nome) values (5, 'Profesor');
+
+select * from profissao;
+
+create table nacionalidade (
+  idnacionalidade integer not null,
+  nome varchar(30),
+
+  constraint pk_ncn_idnacionalidade primary key (idnacionalidade),
+  constraint un_ncn_nome unique (nome)
+
+);
+
+insert into nacionalidade (idnacionalidade, nome) values (1, 'Italiana');
+insert into nacionalidade (idnacionalidade, nome) values (2, 'Noete-Americano');
+insert into nacionalidade (idnacionalidade, nome) values (3, 'Alemão');
+insert into nacionalidade (idnacionalidade, nome) values (4, 'Venezolano');
+insert into nacionalidade (idnacionalidade, nome) values (5, 'Cubano');
+
+
+select * from nacionalidade;
+
+
+create table complemento (
+   idcomplemento integer not null,
+   nome varchar(30) not null,
+
+   constraint pk_cpl_idcomplemento primary key (idcomplemento),
+   constraint un_cpl_nome unique (nome)
+);
+
+select * from complemento;
+
+insert into complemento (idcomplemento, nome) values (1, 'Casota');
+insert into complemento (idcomplemento, nome) values (2, 'Apart');
+insert into complemento (idcomplemento, nome) values (3, 'Rancho');
+insert into complemento (idcomplemento, nome) values (4, 'Batrraco');
+insert into complemento (idcomplemento, nome) values (5, 'Quinta');
+
+select * from complemento;
+
+create table bairro (
+   idbairro integer not null,
+   nome varchar(30) not null,
+
+
+   constraint pk_brr_idbairro primary key (idbairro),
+   constraint un_brr_nome unique (nome) 
+
+);
+
+
+insert into bairro (idbairro, nome) values (1, 'Santa Cecilia');
+insert into bairro (idbairro, nome) values (2, 'Liberdade');
+insert into bairro (idbairro, nome) values (3, 'Belo Horizonte');
+insert into bairro (idbairro, nome) values (4, 'Bela Vista');
+insert into bairro (idbairro, nome) values (5, 'Ciudade Nova');
+
+
+select * from bairro;
+
+
+alter table cliente drop idprofissao;
+alter table cliente add idcomplemento integer;
+
+
+
+
+
+
+alter table cliente rename column nacionalidade to idnacionalidade;
+alter table cliente alter column idnacionalidade type integer;
+-- ====================================================================
+
 /*
-"nome"	"idprofissao"
-"Manuel"	
-"Mariana Silva"	
-"Carlos Souza"	
-"Fernanda Costa"	
-"Ricardo Oliveira"	
-"Patrícia Gomes"	
-"Thiago Fernandes"	
-"Juliana Rocha"	
-"Marcelo Lima"	
-"Aline Martins"	
-"Rodrigo Pereira"	
-"Camila Azevedo"	
-"André Nascimento"	
-"Isabela Teixeira"	
-"Felipe Barbosa"	
-"Gabriela Pires"	
-"Rafael Ribeiro"	
-"Larissa Carvalho"	
-"Bruno Mendes"	
-"Natália Moreira"	
-"Eduardo Batista"	
-"Vanessa Duarte"	
-"Gustavo Lopes"	
-"Carolina Farias"	
-"Henrique Castro"	
-"Tatiane Brito"	
-"Diego Cardoso"	
-"Amanda Monteiro"	
-"Pedro Cunha"	
-"Beatriz Lima"	
-"Leonardo Correia"	
-"Letícia Ramos"	
-"Renato Freitas"	
-"Paula Mendes"	
-"Sérgio Tavares"	
-"Marta Barbosa"	
-"Vitor Andrade"	
-"Débora Rocha"	
-"Cláudio Nogueira"	
-"Helena Moraes"	
-"Alex Sandro"	
-"Luciana Campos"	
-"Maurício Fonseca"	
-"Priscila Moreira"	
-"João Paulo"	
-"Carla Ferreira"	
-"Daniel Sousa"	
-"Simone Araújo"	
-"Fábio Guimarães"	
-"Daniela Vieira"	
-"Rafael Duarte"	
-"Camila Nogueira"	
-"Tiago Pires"	
-"Larissa Alves"	
-"Matheus Rocha"	
-"Fernanda Lima"	
-"Lucas Ferreira"	
-"Juliana Costa"	
-"Carlos Henrique"	
-"Beatriz Moura"	
-"André Moreira"	
-"Patrícia Gomes"	
-"Ricardo Silva"	
-"Isabela Barbosa"	
-"Felipe Araújo"	
-"Carolina Martins"	
-"Marcelo Torres"	
-"Vanessa Carvalho"	
-"Rodrigo Castro"	
-"Natália Fernandes"	
-"Thiago Lima"	
-"Aline Santos"	
-"Eduardo Ribeiro"	
-"Simone Azevedo"	
-"Diego Correia"	
-"Helena Souza"	
-"Bruno Cunha"	
-"Gabriela Fonseca"	
-"Priscila Ferreira"	
-"Lucas Almeida"	
 
-
+estudante  --> 1, 9, 10, 12, 15, 17
+engenheiro --> 2
+pedreiro ----> 3
+jornalista --> 4, 5
+professor ---> 6, 7, 8, 13
+Null --------> 11, 14
 */
+
+
 alter table cliente rename column profissao to idprofissao;
 alter table cliente alter column idprofissao type integer;
 
-
+alter table cliente drop profissao;
+alter table cliente add idprofissao;
+alter table cliente alter column idprofissao type integer;
+alter table cliente add constraint fk_cln_idprofissao foreign key (idprofissao) references profissao (idprofissao);
 update cliente set idprofissao = 1 where idcliente in (1, 9, 10, 12, 15, 17);
 update cliente set idprofissao = 2 where idcliente = 2;
 update cliente set idprofissao = 3 where idcliente = 3;
 update cliente set idprofissao = 4 where idcliente in (4, 5);
 update cliente set idprofissao = 5 where idcliente in (6, 7, 8, 13);
+select * from profissao;
 
+alter table cliente drop nacionalidade;
+alter table cliente add idnacionalidade;
+alter table cliente alter column idnacionalidade type integer;
+alter table cliente add constraint fk_cln_idnacionalidade foreign key (idnacionalidade) references nacionalidade (idnacionalidade);
+update cliente set idnacionalidade = 1 where idcliente in (1,2,3,4,6,10,11,14);
+update cliente set idnacionalidade = 2 where idcliente in (5,7);
+update cliente set idnacionalidade = 3 where idcliente = 8;
+update cliente set idnacionalidade = 4 where idcliente in (9,13);
+select * from nacionalidade;
 
+alter table cliente drop complemento;
+alter table cliente add idcomplemento;
+alter table cliente alter column idcomplemento type integer;
+alter table cliente add constraint fk_cln_idcomplemento foreign key (idcomplemento) references complemento (idcomplemento);
+update cliente set idcomplemento = 1 where idcliente in (1,4,9,13);
+update cliente set idcomplemento = 2 where idcliente in (2,3,7);
+select * from complemento;
 
+   
+alter table cliente drop bairro;
+alter table cliente add idbairro;
+alter table cliente alter column idbairro type integer;
+alter table cliente add constraint fk_cln_idbairro foreign key (idbairro) references bairro (idbairro);
+update cliente set idbairro = 1 where idcliente in (1,12,13);
+update cliente set idbairro = 2 where idcliente in (2,3,6,8,9);
+update cliente set idbairro = 3 where idcliente in (4,5);
+update cliente set idbairro = 4 where idcliente = 7;
+select * from bairro;
+ 
 
 select * from profissao;
 select * from cliente;
+-- nao se pode apagar pela chave incorporada viola as reflas tem que fazer a desvinculação do cliente depois sem apaga
+delete from profissao where idprofissao = 1;
+
+-- ejem
+insert into profissao (idprofissao, nome) values (1, 'teste');
+delete from profissao where idprofissao = 10;
+-- se apaga por não ter chave de um cliente vinculado a ela e para poder apagar 
+
+select * from cliente;
+
+create table uf (
+   iduf integer not null,
+   nome varchar(30) not null,
+   sigla char(2) not null,
+
+   constraint pk_idunidade_federacao primary key (iduf),
+   constraint un_ufd_nome unique (nome),
+   constraint uni_ufd_sigla unique (sigla)
+);
+
+select * from uf;
+
+insert into uf (iduf, nome, sigla) values (1, 'Santa Catarina', 'SC');
+insert into uf (iduf, nome, sigla) values (2, 'Parana', 'PR');
+insert into uf (iduf, nome, sigla) values (3, 'São Paulo', 'SP');
+insert into uf (iduf, nome, sigla) values (4, 'Minas Gerais', 'MR');
+insert into uf (iduf, nome, sigla) values (5, 'Rio Grande do Sul', 'RS');
+insert into uf (iduf, nome, sigla) values (6, 'Rio de Janeiro', 'RJ');
 
 
 
+create table municipio (
+    idmunicipio integer not null,
+	nome varchar(30) not null,
+	iduf integer not null,
+
+	constraint pk_mnc_idmunicipio primary key (idmunicipio),
+	constraint un_mnc_nome unique (nome),
+	constraint fk_mnc_iduf foreign  key (iduf) references uf (iduf)
+);
+
+
+select * from municipio;
+
+insert into municipio (idmunicipio, nome, iduf) values (1, 'Porto União', 1);
+insert into municipio (idmunicipio, nome, iduf) values (2, 'Canoinhas', 1);
+insert into municipio (idmunicipio, nome, iduf) values (3, 'Porto Vitória', 2); 
+insert into municipio (idmunicipio, nome, iduf) values (4, 'General Cardeiro', 2); 
+insert into municipio (idmunicipio, nome, iduf) values (5, 'São Paulo', 3);
+insert into municipio (idmunicipio, nome, iduf) values (6, 'Rio de Janeiro', 6);
+insert into municipio (idmunicipio, nome, iduf) values (7, 'Uberlândia', 4);
+insert into municipio (idmunicipio, nome, iduf) values (8, 'Porto Alegre', 5);
+insert into municipio (idmunicipio, nome, iduf) values (9, 'União da Vitoria', 2);
+
+
+select * from municipio;
+select * from cliente;
+
+alter table cliente drop municipio;
+alter table cliente drop uf;
+alter table cliente add idmunicipio integer;
+alter table cliente add constraint fk_cliente_idmunicipio foreign key (idmunicipio) references municipio (idmunicipio);
+
+
+update cliente set idmunicipio = 1 where idmunicipio in (1, 2, 10, 11);
+update cliente set idmunicipio = 2 where idmunicipio in (3, 12);
+update cliente set idmunicipio = 3 where idmunicipio = 4;
+update cliente set idmunicipio = 4 where idmunicipio in (5);
+update cliente set idmunicipio = 5 where idmunicipio in (6, 13);
+update cliente set idmunicipio = 6 where idmunicipio in (7);
+update cliente set idmunicipio = 7 where idmunicipio in (8);
+update cliente set idmunicipio = 8 where idmunicipio in (9);
+update cliente set idmunicipio = 9 where idmunicipio in (14,15);
+
+
+select * from municipio;
+select * from cliente;
+
+-- ################################################################
+
+
+create table fornecedor (
+   idfornecedor integer not null,
+   nome varchar(50) not null,
+
+
+   constraint pk_frn_idfornecedor primary key (idfornecedor),
+   constraint un_frn_nome unique (nome)
+
+);
+
+select * from fornecedor;
+
+insert into fornecedor (idfornecedor, nome) values (1, 'Cap. Camputadores');
+insert into fornecedor (idfornecedor, nome) values (2, 'AA. Camputadores');
+insert into fornecedor (idfornecedor, nome) values (3, 'BB. Máquinas');
+
+
+
+create table vendedor (
+    idvendedor integer not null,
+	nome varchar(50) not null,
+
+
+	constraint pk_vnd_idvendedor primary key (idvendedor),
+	constraint un_vend_nome unique (nome)
+);
+
+
+select * from vendedor;
+
+
+insert into vendedor (idvendedor, nome) values (1, 'Andres');
+insert into vendedor (idvendedor, nome) values (2, 'Alisson');
+insert into vendedor (idvendedor, nome) values (3, 'José');
+insert into vendedor (idvendedor, nome) values (4, 'Ailiton');
+insert into vendedor (idvendedor, nome) values (5, 'María');
+insert into vendedor (idvendedor, nome) values (6, 'Suelem');
+insert into vendedor (idvendedor, nome) values (7, 'Aline');
+insert into vendedor (idvendedor, nome) values (8, 'Silvana');
+
+select * from vendedor;
+
+
+create table transportadora (
+   idtransportadora integer not null,
+   idmunicipio integer,
+   nome varchar(50) not null,
+   logradouro varchar(50),
+   numero varchar(10),
+
+
+   constraint pk_trn_idtransportadora primary key (idtransportadora),
+   constraint fk_trn_idmunicipio foreign key (idmunicipio) references municipio (idmunicipio),
+   constraint un_trn_nome unique (nome)
+);
+
+select * from transportadora;
+select * from municipio;
+
+
+insert into transportadora (idtransportadora, idmunicipio, nome, logradouro, numero)
+values(1, 9, 'Bs. transportadora', 'Rua das lima', '01');
+insert into transportadora (idtransportadora, idmunicipio, nome)
+values(2, 5, 'União transportadora');
+
+
+create table produto (
+   idproduto integer not null,
+   idfornecedor integer not null,
+   nome varchar(50) not null,
+   valor float not null,
+
+   constraint pk_prd_idproduto primary key (idproduto),
+   constraint fk_prd_idfornecedor foreign key (idfornecedor) references fornecedor (idfornecedor)
+
+);
+
+select * from produto;
+
+insert into produto (idproduto, idfornecedor, nome, valor)
+values(1, 1 'Micro-computador', '800')
