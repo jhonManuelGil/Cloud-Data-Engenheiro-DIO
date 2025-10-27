@@ -524,5 +524,75 @@ create table produto (
 
 select * from produto;
 
-insert into produto (idproduto, idfornecedor, nome, valor)
-values(1, 1 'Micro-computador', '800')
+insert into produto (idproduto, idfornecedor, nome, valor) values(1, 1, 'Micro-computador', '800');
+insert into produto (idproduto, idfornecedor, nome, valor) values(2, 1, 'Monitor', '500');
+insert into produto (idproduto, idfornecedor, nome, valor) values(3, 2, 'Placa mae', '200');
+insert into produto (idproduto, idfornecedor, nome, valor) values(4, 2, 'HD', 150);
+insert into produto (idproduto, idfornecedor, nome, valor) values(5, 2, 'Placa de video', 200);
+insert into produto (idproduto, idfornecedor, nome, valor) values(6, 3, 'Memoria Ram', 100);
+insert into produto (idproduto, idfornecedor, nome, valor) values(7, 1, 'Gabinete', 350);
+
+select * from produto;
+
+create table pedido (
+   idpedido integer not null,
+   idcliente integer not null,
+   idtransportadora integer,
+   idvendedor integer not null,
+   data_pedido date not null,
+   valor float not null,
+
+   constraint pk_pdd_idpedido primary key (idpedido),
+   constraint fk_pdd_idcliente foreign key (idcliente) references cliente (idcliente),
+   constraint fk_pdd_idtransportadora foreign key (idtransportadora) references transportadora (idtransportadora),
+   constraint fk_pdd_idvendedor foreign key (idvendedor) references vendedor (idvendedor)
+   
+);
+
+select * from pedido;
+
+-- inserções pedido
+select * from cliente;
+select * from transportadora;
+select * from vendedor;
+update cliente set nome = 'Manoel' where idcliente = 1;
+select nome from cliente where nome like '%Fa%';
+
+insert into pedido (idpedido, data_pedido, valor, idcliente, idtransportadora, idvendedor) values (1, '2008-04-01', 1300, 1, 1, 1);
+--
+insert into pedido (idpedido, data_pedido, valor, idcliente, idtransportadora, idvendedor) values (2, '2008-04-01', 500, 1, 1, 1);
+--
+insert into pedido (idpedido, data_pedido, valor, idcliente, idtransportadora, idvendedor) values (3, '2008-04-02', 300, 11, 2, 5);
+--
+insert into pedido (idpedido, data_pedido, valor, idcliente, idtransportadora, idvendedor) values (4, '2008-04-05', 1000, 4, 2, 5);
+--
+insert into pedido (idpedido, data_pedido, valor, idcliente, idtransportadora, idvendedor) values (5, '2008-04-06', 200, 1, 1, 1);
+--
+insert into pedido (idpedido, data_pedido, valor, idcliente, idtransportadora, idvendedor) values (1, '2008-04-01', 1300, 1, 1, 1);
+--
+insert into pedido (idpedido, data_pedido, valor, idcliente, idtransportadora, idvendedor) values (1, '2008-04-01', 1300, 1, 1, 1);
+--
+insert into pedido (idpedido, data_pedido, valor, idcliente, idtransportadora, idvendedor) values (1, '2008-04-01', 1300, 1, 1, 1);
+--
+insert into pedido (idpedido, data_pedido, valor, idcliente, idtransportadora, idvendedor) values (1, '2008-04-01', 1300, 1, 1, 1);
+--
+insert into pedido (idpedido, data_pedido, valor, idcliente, idtransportadora, idvendedor) values (1, '2008-04-01', 1300, 1, 1, 1);
+--
+insert into pedido (idpedido, data_pedido, valor, idcliente, idtransportadora, idvendedor) values (1, '2008-04-01', 1300, 1, 1, 1);
+--
+insert into pedido (idpedido, data_pedido, valor, idcliente, idtransportadora, idvendedor) values (1, '2008-04-01', 1300, 1, 1, 1);
+--
+insert into pedido (idpedido, data_pedido, valor, idcliente, idtransportadora, idvendedor) values (1, '2008-04-01', 1300, 1, 1, 1);
+--
+insert into pedido (idpedido, data_pedido, valor, idcliente, idtransportadora, idvendedor) values (1, '2008-04-01', 1300, 1, 1, 1);
+--
+insert into pedido (idpedido, data_pedido, valor, idcliente, idtransportadora, idvendedor) values (1, '2008-04-01', 1300, 1, 1, 1);
+
+
+
+
+
+
+
+
+
