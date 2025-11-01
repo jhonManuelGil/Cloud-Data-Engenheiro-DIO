@@ -123,6 +123,8 @@ SELECT
 FROM cliente;
 
 
+SELECT * from cliente
+
 SELECT *
 FROM cliente
 WHERE cpf IS NULL
