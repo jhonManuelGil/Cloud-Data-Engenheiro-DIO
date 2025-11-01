@@ -126,13 +126,85 @@
     
     
     
-a = int(input("Digite o valor de a: ")) #pega o valor de a
-b = int(input("Digite o valor de b: ")) #pega o valor de b
-resto_a = a % 2;
-resto_b = b % 2;
+# a = int(input("Digite o valor de a: ")) #pega o valor de a
+# b = int(input("Digite o valor de b: ")) #pega o valor de b
+# resto_a = a % 2;
+# resto_b = b % 2;
 
 
-if resto_a == 0 or resto_b == 0: #se o resto de a for igual a 0 ou o resto de b for igual a 0
-    print("Pelo menos um dos números é par: ") #mostra o valor de a e b
-else: #se não
-    print("Nenhum dos números é par: ") #mostra o valor de a e b4
+# if resto_a == 0 or resto_b > 0: #se o resto de a for igual a 0 ou o resto de b for maior que 0
+#     print("Pelo menos um dos números é par: ") #mostra o valor de a e b
+# else: #se não
+#     print("Nenhum dos números é par: ") #mostra o valor de a e b4
+
+
+# Digite o valor de a: 4
+# Digite o valor de b: 9
+# Pelo menos um dos números é par:
+
+
+# a = int(input("Digite nota primeiro trimestre: ")) #pega o valor de a
+# b = int(input("Digite nota segundo trimestre: ")) #pega o valor de 
+# c = int(input("Digite nota terceiro trimestre: ")) #pega o valor de c
+# d = int(input("Digite nota quarto trimestre: ")) #pega o valor de d
+
+# media = (a + b + c + d) / 4; #calcula a média
+
+# print("Média anual: {}".format(media)) #mostra a média anual
+
+
+# Digite nota primeiro trimestre: 8                                                                                                                                                                        
+# Digite nota segundo trimestre: 5
+# Digite nota terceiro trimestre: 96
+# Digite nota quarto trimestre: 01
+# Média anual: 27.5
+
+
+
+# a = int(input("Digite nota primeiro trimestre: ")) #pega o valor de a
+# b = int(input("Digite nota segundo trimestre: ")) #pega o valor de 
+# c = int(input("Digite nota terceiro trimestre: ")) #pega o valor de c
+# d = int(input("Digite nota quarto trimestre: ")) #pega o valor de d
+
+# media = (a + b + c + d) / 4; #calcula a média
+
+# if a <= 10 and b <= 10 and c <= 10 and d <= 10: 
+#     #se a for menor ou igual a 10 e b for menor ou igual a 10 e c for menor ou igual a 10 e d for menor ou igual a 10
+#     print("Média anual: {}".format(media)) #mostra a média anual
+# else: #se não
+#     print("foi inserido uma nota inválida") #mostra a mensagem de erro
+    
+# Digite nota primeiro trimestre: 7
+# Digite nota segundo trimestre: 10
+# Digite nota terceiro trimestre: 25
+# Digite nota quarto trimestre: 89
+# foi inserido uma nota inválida
+
+a = int(input("Digite nota primeiro trimestre: ")) #pega o valor de a
+if a > 10:
+    a = int(input("Nota inválida. Digite errado primeiro trimestre: ")) #pega o valor de a 
+    
+b = int(input("Digite nota segundo trimestre: ")) #pega o valor de 
+if a > 10:
+    a = int(input("Nota inválida. Digite errado segundo trimestre: ")) #pega o valor de a
+
+c = int(input("Digite nota terceiro trimestre: ")) #pega o valor de c
+if a > 10:
+    a = int(input("Nota inválida. Digite errado terceiro trimestre: ")) #pega o valor de a
+    
+d = int(input("Digite nota quarto trimestre: ")) #pega o valor de d
+if a > 10:
+    a = int(input("Nota inválida. Digite errado quarto trimestre: ")) #pega o valor de a
+
+media = (a + b + c + d) / 4; #calcula a média
+
+print("Média anual: {}".format(media)) #mostra a média anual
+
+# Digite nota primeiro trimestre: 47                                                                                                                                                                       
+# Nota inválida. Digite errado: 10
+# Digite nota segundo trimestre: 8
+# Digite nota terceiro trimestre: 3
+# Digite nota quarto trimestre: 9
+# Média anual: 7.5
+
+
