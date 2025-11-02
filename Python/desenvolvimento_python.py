@@ -180,25 +180,25 @@
 # Digite nota quarto trimestre: 89
 # foi inserido uma nota inválida
 
-a = int(input("Digite nota primeiro trimestre: ")) #pega o valor de a
-if a > 10:
-    a = int(input("Nota inválida. Digite errado primeiro trimestre: ")) #pega o valor de a 
+# a = int(input("Digite nota primeiro trimestre: ")) #pega o valor de a
+# if a > 10:
+#     a = int(input("Nota inválida. Digite errado primeiro trimestre: ")) #pega o valor de a 
     
-b = int(input("Digite nota segundo trimestre: ")) #pega o valor de 
-if a > 10:
-    a = int(input("Nota inválida. Digite errado segundo trimestre: ")) #pega o valor de a
+# b = int(input("Digite nota segundo trimestre: ")) #pega o valor de 
+# if a > 10:
+#     a = int(input("Nota inválida. Digite errado segundo trimestre: ")) #pega o valor de a
 
-c = int(input("Digite nota terceiro trimestre: ")) #pega o valor de c
-if a > 10:
-    a = int(input("Nota inválida. Digite errado terceiro trimestre: ")) #pega o valor de a
+# c = int(input("Digite nota terceiro trimestre: ")) #pega o valor de c
+# if a > 10:
+#     a = int(input("Nota inválida. Digite errado terceiro trimestre: ")) #pega o valor de a
     
-d = int(input("Digite nota quarto trimestre: ")) #pega o valor de d
-if a > 10:
-    a = int(input("Nota inválida. Digite errado quarto trimestre: ")) #pega o valor de a
+# d = int(input("Digite nota quarto trimestre: ")) #pega o valor de d
+# if a > 10:
+#     a = int(input("Nota inválida. Digite errado quarto trimestre: ")) #pega o valor de a
 
-media = (a + b + c + d) / 4; #calcula a média
+# media = (a + b + c + d) / 4; #calcula a média
 
-print("Média anual: {}".format(media)) #mostra a média anual
+# print("Média anual: {}".format(media)) #mostra a média anual
 
 # Digite nota primeiro trimestre: 47                                                                                                                                                                       
 # Nota inválida. Digite errado: 10
@@ -207,4 +207,32 @@ print("Média anual: {}".format(media)) #mostra a média anual
 # Digite nota quarto trimestre: 9
 # Média anual: 7.5
 
+# --------==================  laços de repetição =========================--------------
 
+# for x in range(1, 101):
+#     print(x)
+    
+    
+# a = int(input("Digite um número: ")) #pega o valor de a
+# for x in range(1, a+1):
+#     resta = a % x
+#     print(resta)
+    
+    
+a = int(input("Digite um número: ")) #pega o valor de a
+div = 0 #contador de divisores
+
+for x in range(1, a+1): #laço de repetição de 1 até o valor de a
+    resta = a % x
+    if resta == 0:
+        div =  div + 1 #contador de divisores
+        
+if div == 2: #se o número de divisores for igual a 2
+    print("O número {} é primo".format(a))  #mostra o valor de a
+else:
+    print("O número {} não é primo".format(a))  #mostra o valor de a
+
+
+
+
+    
