@@ -301,17 +301,31 @@
 
 
 a = int(input("Digite nota primeiro trimestre: ")) #pega o valor de a
-if a > 10:
+while a > 10: #se a for maior que 10
     a = int(input("Nota inválida. Digite errado primeiro trimestre: ")) #pega o valor de a 
     
-b = int(input("Digite nota segundo trimestre: ")) #pega o valor de 
-if a > 10:
-    a = int(input("Nota inválida. Digite errado segundo trimestre: ")) #pega o valor de a
+b = int(input("Digite nota segundo trimestre: ")) #pega o valor de b
+while b > 10: #se a for maior que 10
+    b = int(input("Nota inválida. Digite errado segundo trimestre: ")) #pega o valor de b
 
 c = int(input("Digite nota terceiro trimestre: ")) #pega o valor de c
-if a > 10:
-    a = int(input("Nota inválida. Digite errado terceiro trimestre: ")) #pega o valor de a
+while c > 10: #se a for maior que 10
+    c = int(input("Nota inválida. Digite errado terceiro trimestre: ")) #pega o valor de c
     
 d = int(input("Digite nota quarto trimestre: ")) #pega o valor de d
-if a > 10:
-    a = int(input("Nota inválida. Digite errado quarto trimestre: ")) #pega o valor de a
+while d > 10: #se a for maior que 10
+    d = int(input("Nota inválida. Digite errado quarto trimestre: ")) #pega o valor de d
+    
+media = (a + b + c + d) / 4; #calcula a média 
+
+print("Média anual: {}".format(media)) #mostra a média anual
+
+# Digite nota primeiro trimestre: 100
+# Nota inválida. Digite errado primeiro trimestre: 12
+# Nota inválida. Digite errado primeiro trimestre: 1547
+# Nota inválida. Digite errado primeiro trimestre: 10
+# Digite nota segundo trimestre: 05
+# Digite nota terceiro trimestre: 87
+# Nota inválida. Digite errado terceiro trimestre: 01
+# Digite nota quarto trimestre: 08
+# Média anual: 6.0
