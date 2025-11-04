@@ -218,21 +218,100 @@
 #     resta = a % x
 #     print(resta)
     
+# for x in range(50, 101):
+#     print(x)
     
-a = int(input("Digite um número: ")) #pega o valor de a
-div = 0 #contador de divisores
+# a = int(input("Digite um número: ")) #pega o valor de a
+# div = 0 #contador de divisores
 
-for x in range(1, a+1): #laço de repetição de 1 até o valor de a
-    resta = a % x
-    if resta == 0:
-        div =  div + 1 #contador de divisores
+# for x in range(1, a+1): #laço de repetição de 1 até o valor de a
+#     resta = a % x
+#     if resta == 0:
+#         div =  div + 1 #contador de divisores
         
-if div == 2: #se o número de divisores for igual a 2
-    print("O número {} é primo".format(a))  #mostra o valor de a
-else:
-    print("O número {} não é primo".format(a))  #mostra o valor de a
+# if div == 2: #se o número de divisores for igual a 2
+#     print("O número {} é primo".format(a))  #mostra o valor de a
+# else:
+#     print("O número {} não é primo".format(a))  #mostra o valor de a
 
 
+# Digite um número: 5
+# O número 5 é primo
+# ===========================
+# Digite um número: 9
+# O número 9 não é primo
 
 
+ 
+# a = int(input("Digite um numero: "))
+# for num in range(a+1):
+#     div = 0
+#     for x in range(1, num+1): 
+#       resto = num % x
+#     #   print( num, resto)
+#       if resto == 0:
+#           div += 1 #controlador de divisores
+      
+   
+#     if div == 2: #se o número de divisores for igual a 2
+#       print(num)
+
+
+# Digite um numero: 20                                                                                                                                                    
+# 2                                                                                                                                                                       
+# 3
+# 5
+# 7
+# 11
+# 13
+# 17
+# 19
+
+# a = 0
+# while a <= 5:
+#     print(a)
+#     a += 1
+
+# 0
+# 1
+# 2
+# 3
+# 4
+# 5
+
+# a = 0
+# while a <= 5:
+#     print(a)
+#     a += 1
+
+# nota = int(input("Digite sua nota de 0 a 10: "));
+
+# while nota > 10:
+#     nota = int(input("nota invalida. Digite sua nota de 0 a 10: "));
     
+# print("Sua nota é: {}".format(nota));
+    
+# Digite sua nota de 0 a 10: 10
+# Sua nota é: 10
+
+# Digite sua nota de 0 a 10: 120                                                                                                                                          
+# nota invalida. Digite sua nota de 0 a 10: 02                                                                                                                            
+# Sua nota é: 2 
+
+
+
+a = int(input("Digite nota primeiro trimestre: ")) #pega o valor de a
+if a > 10:
+    a = int(input("Nota inválida. Digite errado primeiro trimestre: ")) #pega o valor de a 
+    
+b = int(input("Digite nota segundo trimestre: ")) #pega o valor de 
+if a > 10:
+    a = int(input("Nota inválida. Digite errado segundo trimestre: ")) #pega o valor de a
+
+c = int(input("Digite nota terceiro trimestre: ")) #pega o valor de c
+if a > 10:
+    a = int(input("Nota inválida. Digite errado terceiro trimestre: ")) #pega o valor de a
+    
+d = int(input("Digite nota quarto trimestre: ")) #pega o valor de d
+if a > 10:
+    a = int(input("Nota inválida. Digite errado quarto trimestre: ")) #pega o valor de a
