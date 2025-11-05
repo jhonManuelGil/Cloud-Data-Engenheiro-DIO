@@ -71,13 +71,13 @@
 # ============== Argumento kwargs =============
 
 
-def imprimir_infor(**info):
-    print(info) # muestra el dicionario
-    # {'nombre': 'Isaac', 'edad': 13, 'ciudad': 'Bogota'}
-    for clave, valor in info.items():
-        print(f"{clave}: {valor}")
+# def imprimir_infor(**info):
+#     print(info) # muestra el dicionario
+#     # {'nombre': 'Isaac', 'edad': 13, 'ciudad': 'Bogota'}
+#     for clave, valor in info.items():
+#         print(f"{clave}: {valor}")
     
-imprimir_infor(nombre="Isaac", edad=13, ciudad="Bogota")
+# imprimir_infor(nombre="Isaac", edad=13, ciudad="Bogota")
 
 # nombre: Isaac
 # edad: 13

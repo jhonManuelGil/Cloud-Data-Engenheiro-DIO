@@ -300,25 +300,31 @@
 
 
 
-a = int(input("Digite nota primeiro trimestre: ")) #pega o valor de a
-while a > 10: #se a for maior que 10
-    a = int(input("Nota inválida. Digite errado primeiro trimestre: ")) #pega o valor de a 
+# a = int(input("Digite nota primeiro trimestre: ")) #pega o valor de a
+# while a > 10: #se a for maior que 10
+#     a = int(input("Nota inválida. Digite errado primeiro trimestre: ")) #pega o valor de a 
     
-b = int(input("Digite nota segundo trimestre: ")) #pega o valor de b
-while b > 10: #se a for maior que 10
-    b = int(input("Nota inválida. Digite errado segundo trimestre: ")) #pega o valor de b
+# b = int(input("Digite nota segundo trimestre: ")) #pega o valor de b
+# while b > 10: #se a for maior que 10
+#     b = int(input("Nota inválida. Digite errado segundo trimestre: ")) #pega o valor de b
 
-c = int(input("Digite nota terceiro trimestre: ")) #pega o valor de c
-while c > 10: #se a for maior que 10
-    c = int(input("Nota inválida. Digite errado terceiro trimestre: ")) #pega o valor de c
+# c = int(input("Digite nota terceiro trimestre: ")) #pega o valor de c
+# while c > 10: #se a for maior que 10
+#     c = int(input("Nota inválida. Digite errado terceiro trimestre: ")) #pega o valor de c
     
-d = int(input("Digite nota quarto trimestre: ")) #pega o valor de d
-while d > 10: #se a for maior que 10
-    d = int(input("Nota inválida. Digite errado quarto trimestre: ")) #pega o valor de d
+# d = int(input("Digite nota quarto trimestre: ")) #pega o valor de d
+# while d > 10: #se a for maior que 10
+#     d = int(input("Nota inválida. Digite errado quarto trimestre: ")) #pega o valor de d
     
-media = (a + b + c + d) / 4; #calcula a média 
+# media = (a + b + c + d) / 4; #calcula a média 
 
-print("Média anual: {}".format(media)) #mostra a média anual
+# print("Média anual: {}".format(media)) #mostra a média anual
+
+# O código serve para calcular a média anual de um aluno. Ele pede as notas dos 
+# quatro trimestres e verifica se cada nota é válida (não pode ser maior que 10). 
+# Se o usuário digitar uma nota inválida, o programa pede novamente até estar correta. 
+# Depois, ele calcula a média das quatro notas e mostra o resultado final na tela.
+
 
 # Digite nota primeiro trimestre: 100
 # Nota inválida. Digite errado primeiro trimestre: 12
@@ -329,3 +335,147 @@ print("Média anual: {}".format(media)) #mostra a média anual
 # Nota inválida. Digite errado terceiro trimestre: 01
 # Digite nota quarto trimestre: 08
 # Média anual: 6.0
+
+
+# lista = [1,2,5,45,58,69,15,8,13,21]
+# lista_aminal = ['cachorro', 'gato', 'elefante', 'leão', 'aguia']
+
+# nova_lista = lista_aminal * 3
+# print(nova_lista)
+# ['cachorro', 'gato', 'elefante', 'leão', 'cachorro', 'gato', 'elefante', 'leão', 'cachorro', 'gato', 'elefante', 'leão']
+
+# lista.sort()
+# lista_aminal.sort()
+# print(lista)
+# # [1, 2, 5, 8, 13, 15, 21, 45, 58, 69]
+# print(lista_aminal)
+# # ['aguia', 'cachorro', 'elefante', 'gato', 'leão']
+# lista_aminal.reverse()
+# print(lista_aminal)
+# # ['leão', 'gato', 'elefante', 'cachorro', 'aguia']
+
+
+# lista_aminal[0] = 'tigre' #altera o valor do índice 0 da lista
+# print(lista_aminal)
+# ['tigre', 'gato', 'elefante', 'leão', 'aguia']  
+
+# tupla = tupla_aminal = ('cachorro', 'gato', 'elefante', 'leão', 'aguia')
+# print(tupla_aminal)
+# #  ('cachorro', 'gato', 'elefante', 'leão', 'aguia')
+
+# tupla = (1,2,3,5,6,8,4)
+# print(tupla)
+# #  (1, 2, 3, 5, 6, 8, 4)  
+# print(len(tupla))
+# 7 mostra o tamanho da tupla
+# print(len(lista_aminal))
+# # 5 mostra o tamanho da lista
+# tupla_aminal = tuple(lista_aminal)
+# print(type(tupla_aminal))
+# print(tupla_aminal)
+# # <class 'tuple'>
+# # ('cachorro', 'gato', 'elefante', 'leão', 'aguia')
+
+# lista = list(tupla)
+# print(type(lista))
+# lista[0] = 25
+# # [25, 2, 3, 5, 6, 8, 4]
+# print(lista)
+# # <class 'list'>
+# # [1, 2, 3, 5, 6, 8, 4]
+
+
+
+# if 'gato' in lista_aminal:
+# if 'lobo' in lista_aminal:
+#     print("Existe o animal gato na lista")
+# else:
+#     print("Não existe o animal lobo na lista. Sera adicionado.")
+#     lista_aminal.append('lobo')
+#     print(lista_aminal)
+
+# Existe o animal gato na lista
+
+# Não existe o animal lobo na lista. Sera adicionado.
+# ['cachorro', 'gato', 'elefante', 'leão', 'lobo']
+
+# lista_aminal.pop(4) #remove o índice 4 da lista
+# print(lista_aminal)
+# ['cachorro', 'gato', 'elefante', 'leão']
+
+
+
+
+# print(lista_aminal[1]) #mostra o valor do índice 1 da lista
+# #gato
+
+# print(sum(lista))
+# 50 soma os valores da lista
+# print(max(lista))
+# # 21 mostra o maior valor da lista
+# print(min(lista))
+# # 1 mostra o menor valor da lista
+
+
+
+# for x in lista_aminal:
+#     print(x)
+    # gato
+    # cachorro
+    # gato
+    # elefante
+    # leão
+    
+# soma = 0
+# for x in lista:
+#     print(x)
+#     soma += x
+# print("Soma: {}".format(soma))
+
+# 1
+# 2
+# 5
+# 8
+# 13
+# 21
+# Soma: 50
+
+
+# ========================== conjuntos e subconjuntos de elementos em Python =========================
+
+
+# conjunto_a = {1, 2, 2, 3, 4, 25}
+# conjunto_b = {3, 4, 5, 6}
+# conjunto_union = conjunto_b.union(conjunto_a) #união entre os conjuntos
+# print("union: {}".format(conjunto_union))
+# # union: {1, 2, 3, 4, 5, 6, 25}
+# conjunto_intersection = conjunto_a.intersection(conjunto_b) #interseção entre os conjuntos
+# print("intersection: {}".format(conjunto_intersection)) 
+# # intersection: {3, 4}
+# conjunto_diferente = conjunto_a.difference(conjunto_b) #printa a diferença entre os conjuntos
+# print("difference: {}".format(conjunto_diferente))
+# # difference: {1, 2, 25}
+# canjunto_simetrica = conjunto_a.symmetric_difference(conjunto_b) #printa a diferença simétrica entre os conjuntos
+# print("symmetric difference: {}".format(canjunto_simetrica)) 
+# # symmetric difference: {1, 2, 5, 6, 25}
+
+
+conjunto_a = {1, 2, 3}
+conjunto_b = {1, 2, 3, 4, 5, 6}
+conjunto_subset = conjunto_a.issubset(conjunto_b) #verifica se o conjunto_a é um subconjunto do conjunto_b
+print("subset: {}".format(conjunto_subset))
+# subset: True
+conjunto_superset = conjunto_b.issuperset(conjunto_a) #verifica se o conjunto_b é um superconjunto do conjunto_a
+print("superset: {}".format(conjunto_superset))
+# superset: True
+
+
+lista = ["gato", "cachorro", "elefante", "leão", "gato"]
+print("Lista: {}".format(lista))
+# Lista: ['gato', 'cachorro', 'elefante', 'leão', 'gato']
+conjunto_animal = set(lista) #converte a lista em conjunto
+print("Conjunto: {}".format(conjunto_animal))
+# Conjunto: {'cachorro', 'gato', 'elefante', 'leão'}
+lista_nova_animal = list(conjunto_animal) #converte o conjunto em lista
+print("Lista nova: {}".format(lista_nova_animal))
+# Lista nova: ['cachorro', 'gato', 'elefante', 'leão']
