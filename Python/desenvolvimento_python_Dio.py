@@ -509,39 +509,39 @@
 # 0.2  
 
 
-class Calculadora:
-    # def __init__(self):
-    #     pass
-    # print(Calculadora.valor_a)    
-    #42
-    # 69
-    # 374
-    # 0.04591836734693878
-    # ===============================
+# class Calculadora:
+#     # def __init__(self):
+#     #     pass
+#     # print(Calculadora.valor_a)    
+#     #42
+#     # 69
+#     # 374
+#     # 0.04591836734693878
+#     # ===============================
     
-    def soma (self, valor_a, valor_b):
-        return valor_a + valor_b
+#     def soma (self, valor_a, valor_b):
+#         return valor_a + valor_b
         
 
-    def subtracao (self, valor_a, valor_b):
-        return valor_a - valor_b
+#     def subtracao (self, valor_a, valor_b):
+#         return valor_a - valor_b
 
-    def multiplicacao (self, valor_a, valor_b):
-        return valor_a * valor_b
+#     def multiplicacao (self, valor_a, valor_b):
+#         return valor_a * valor_b
         
 
-    def divicao (self, valor_a, valor_b):
-        return valor_a / valor_b
+#     def divicao (self, valor_a, valor_b):
+#         return valor_a / valor_b
 
 
 
-Calculadora = Calculadora()
-# print(Calculadora.valor_a)
-print(Calculadora.soma(34, 8))
-print(Calculadora.subtracao(78, 9))
-print(Calculadora.multiplicacao(34, 11))
-print(Calculadora.divicao(45, 980))
-print('===============================')
+# Calculadora = Calculadora()
+# # print(Calculadora.valor_a)
+# print(Calculadora.soma(34, 8))
+# print(Calculadora.subtracao(78, 9))
+# print(Calculadora.multiplicacao(34, 11))
+# print(Calculadora.divicao(45, 980))
+# print('===============================')
 
 # 42
 # 69
@@ -549,7 +549,102 @@ print('===============================')
 # 0.04591836734693878
 # ===============================
 
-# ============================== importação de classes, métodos e construção de funções anônimas (lambda) =========================
+# ============================== módulos, importação de classes, métodos e construção de funções anônimas (lambda) =========================
 
 
 
+
+
+# # from desenvolvimento_python_Dio import soma
+# from importar import televisao
+# from importar import Calculadora
+# from fundamentos_de_funciones import imprimir_infor, soma, subtracao, multiplicacao, divicao, teste
+# # from fundamentos_de_funciones import 
+# from def_emport import contador_de_letras
+
+
+# if __name__ == '__main__':
+    
+    
+#     print(soma(5, 10))
+#     print(subtracao(10, 5))
+#     print(subtracao(10, 5))
+#     print(multiplicacao(10, 50))
+#     print(divicao(10, 50))
+    
+#     print('================televisao===============')
+#     TV = televisao()
+#     print('Televisão esta ligado: {}'.format(TV.ligada))
+#     TV.desligar()
+    
+#     print('================lista_de_cadenas===============')
+
+#     lista_de_cadenas = ['Hola', 'Bienvenidos', 'a', 'la', 'clase', 'de', 'Python', 'DIO', 'Desenvolvimento']
+#     print("Total de letra de la lista: {}".format(contador_de_letras(lista_de_cadenas)))  # [4, 10, 1, 2, 5, 2, 6, 3, 13]
+    
+#     print('================Calculadora===============')
+#     Calculadora = Calculadora(10, 49)
+#     print("Total de soma: {}".format(Calculadora.soma()))
+    
+#     print('================imprimir_infor===============')
+#     imprimir_infor(nombre="Isaac", edad=13, ciudad="Bogota")
+    
+#     print(teste())
+    
+    
+    
+    
+
+
+# resultado
+# importar
+# ================imprimir_infor_soma===============
+# 15
+# 5
+# 5
+# 500
+# 0.2
+# ================televisao===============
+# Televis�o esta ligado: False
+# ================lista_de_cadenas===============
+# Total de letra de la lista: [4, 11, 1, 2, 5, 2, 6, 3, 15]
+# ================Calculadora===============
+# Total de soma: 59
+# ================imprimir_infor===============
+# {'nombre': 'Isaac', 'edad': 13, 'ciudad': 'Bogota'}
+# nombre: Isaac
+# edad: 13
+# ciudad: Bogota
+#  Teste
+
+contador_de_letras = lambda lista: [len(x) for x in lista]
+
+lista_de_cadenas = ['Hola', 'Bienvenidos', 'a', 'la', 'clase', 'de', 'Python', 'DIO', 'Desenvolvimento']
+
+print(contador_de_letras(lista_de_cadenas)) # [4, 10, 1, 2, 5, 2, 6, 3, 13]
+
+soma = lambda a, b: a + b
+subtrasao = lambda a, b: a - b
+print(soma(5, 10)) # 15
+print(subtrasao(10, 5)) # 5
+# 15
+# 5
+print('================calculardora===============')
+calculardora = {
+  "soma" : lambda a, b: a + b,
+  "subtracao" : lambda a, b: a - b,
+  "multiplicacao" : lambda a, b: a * b   
+}
+
+print(type(calculardora)) # <class 'dict'
+
+print(calculardora["soma"](34, 8)) # 42
+print(calculardora["subtracao"](34, 8)) # 42
+print(calculardora["multiplicacao"](34, 8)) # 42
+
+
+# ================calculardora===============
+# <class 'dict'>
+# 42
+# 26
+# 272

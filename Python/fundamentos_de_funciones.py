@@ -71,15 +71,38 @@
 # ============== Argumento kwargs =============
 
 
-# def imprimir_infor(**info):
-#     print(info) # muestra el dicionario
-#     # {'nombre': 'Isaac', 'edad': 13, 'ciudad': 'Bogota'}
-#     for clave, valor in info.items():
-#         print(f"{clave}: {valor}")
+def imprimir_infor(**info):
+    print(info) # muestra el dicionario
+    # {'nombre': 'Isaac', 'edad': 13, 'ciudad': 'Bogota'}
+    for clave, valor in info.items():
+        print(f"{clave}: {valor}")
     
 # imprimir_infor(nombre="Isaac", edad=13, ciudad="Bogota")
-
+print('================imprimir_infor_soma===============')
 # nombre: Isaac
 # edad: 13
 # ciudad: Bogota
 
+
+def soma (a, b):
+    return a + b
+
+def subtracao (a, b):
+    return a - b
+
+def multiplicacao (a, b):
+    return a * b
+
+def divicao (a, b):
+    return a / b
+
+
+# print(soma(5, 10))
+# print(subtracao(10, 5))
+# print(subtracao(10, 5))
+# print(multiplicacao(10, 50))
+# print(divicao(10, 50))
+
+
+def teste():
+    return "Teste"
