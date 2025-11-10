@@ -460,22 +460,96 @@
 # # symmetric difference: {1, 2, 5, 6, 25}
 
 
-conjunto_a = {1, 2, 3}
-conjunto_b = {1, 2, 3, 4, 5, 6}
-conjunto_subset = conjunto_a.issubset(conjunto_b) #verifica se o conjunto_a é um subconjunto do conjunto_b
-print("subset: {}".format(conjunto_subset))
-# subset: True
-conjunto_superset = conjunto_b.issuperset(conjunto_a) #verifica se o conjunto_b é um superconjunto do conjunto_a
-print("superset: {}".format(conjunto_superset))
-# superset: True
+# conjunto_a = {1, 2, 3}
+# conjunto_b = {1, 2, 3, 4, 5, 6}
+# conjunto_subset = conjunto_a.issubset(conjunto_b) #verifica se o conjunto_a é um subconjunto do conjunto_b
+# print("subset: {}".format(conjunto_subset))
+# # subset: True
+# conjunto_superset = conjunto_b.issuperset(conjunto_a) #verifica se o conjunto_b é um superconjunto do conjunto_a
+# print("superset: {}".format(conjunto_superset))
+# # superset: True
 
 
-lista = ["gato", "cachorro", "elefante", "leão", "gato"]
-print("Lista: {}".format(lista))
-# Lista: ['gato', 'cachorro', 'elefante', 'leão', 'gato']
-conjunto_animal = set(lista) #converte a lista em conjunto
-print("Conjunto: {}".format(conjunto_animal))
-# Conjunto: {'cachorro', 'gato', 'elefante', 'leão'}
-lista_nova_animal = list(conjunto_animal) #converte o conjunto em lista
-print("Lista nova: {}".format(lista_nova_animal))
-# Lista nova: ['cachorro', 'gato', 'elefante', 'leão']
+# lista = ["gato", "cachorro", "elefante", "leão", "gato"]
+# print("Lista: {}".format(lista))
+# # Lista: ['gato', 'cachorro', 'elefante', 'leão', 'gato']
+# conjunto_animal = set(lista) #converte a lista em conjunto
+# print("Conjunto: {}".format(conjunto_animal))
+# # Conjunto: {'cachorro', 'gato', 'elefante', 'leão'}
+# lista_nova_animal = list(conjunto_animal) # converte o conjunto em lista
+# print("Lista nova: {}".format(lista_nova_animal))
+# # Lista nova: ['cachorro', 'gato', 'elefante', 'leão']
+
+
+# ========================== Construindo métodos, funções e classes em Python =========================
+
+# def soma (a, b):
+#     return a + b
+
+# def subtracao (a, b):
+#     return a - b
+
+# def multiplicacao (a, b):
+#     return a * b
+
+# def divicao (a, b):
+#     return a / b
+
+
+# print(soma(5, 10))
+# print(subtracao(10, 5))
+# print(subtracao(10, 5))
+# print(multiplicacao(10, 50))
+# print(divicao(10, 50))
+
+# 15
+# 5
+# 5                                                                                                                                                                                  
+# 500                                                                                                                                                                                
+# 0.2  
+
+
+class Calculadora:
+    # def __init__(self):
+    #     pass
+    # print(Calculadora.valor_a)    
+    #42
+    # 69
+    # 374
+    # 0.04591836734693878
+    # ===============================
+    
+    def soma (self, valor_a, valor_b):
+        return valor_a + valor_b
+        
+
+    def subtracao (self, valor_a, valor_b):
+        return valor_a - valor_b
+
+    def multiplicacao (self, valor_a, valor_b):
+        return valor_a * valor_b
+        
+
+    def divicao (self, valor_a, valor_b):
+        return valor_a / valor_b
+
+
+
+Calculadora = Calculadora()
+# print(Calculadora.valor_a)
+print(Calculadora.soma(34, 8))
+print(Calculadora.subtracao(78, 9))
+print(Calculadora.multiplicacao(34, 11))
+print(Calculadora.divicao(45, 980))
+print('===============================')
+
+# 42
+# 69
+# 374
+# 0.04591836734693878
+# ===============================
+
+# ============================== importação de classes, métodos e construção de funções anônimas (lambda) =========================
+
+
+
