@@ -617,30 +617,30 @@
 # ciudad: Bogota
 #  Teste
 
-contador_de_letras = lambda lista: [len(x) for x in lista]
+# contador_de_letras = lambda lista: [len(x) for x in lista]
 
-lista_de_cadenas = ['Hola', 'Bienvenidos', 'a', 'la', 'clase', 'de', 'Python', 'DIO', 'Desenvolvimento']
+# lista_de_cadenas = ['Hola', 'Bienvenidos', 'a', 'la', 'clase', 'de', 'Python', 'DIO', 'Desenvolvimento']
 
-print(contador_de_letras(lista_de_cadenas)) # [4, 10, 1, 2, 5, 2, 6, 3, 13]
+# print(contador_de_letras(lista_de_cadenas)) # [4, 10, 1, 2, 5, 2, 6, 3, 13]
 
-soma = lambda a, b: a + b
-subtrasao = lambda a, b: a - b
-print(soma(5, 10)) # 15
-print(subtrasao(10, 5)) # 5
-# 15
-# 5
-print('================calculardora===============')
-calculardora = {
-  "soma" : lambda a, b: a + b,
-  "subtracao" : lambda a, b: a - b,
-  "multiplicacao" : lambda a, b: a * b   
-}
+# soma = lambda a, b: a + b
+# subtrasao = lambda a, b: a - b
+# print(soma(5, 10)) # 15
+# print(subtrasao(10, 5)) # 5
+# # 15
+# # 5
+# print('================calculardora===============')
+# calculardora = {
+#   "soma" : lambda a, b: a + b,
+#   "subtracao" : lambda a, b: a - b,
+#   "multiplicacao" : lambda a, b: a * b   
+# }
 
-print(type(calculardora)) # <class 'dict'
+# print(type(calculardora)) # <class 'dict'
 
-print(calculardora["soma"](34, 8)) # 42
-print(calculardora["subtracao"](34, 8)) # 42
-print(calculardora["multiplicacao"](34, 8)) # 42
+# print(calculardora["soma"](34, 8)) # 42
+# print(calculardora["subtracao"](34, 8)) # 42
+# print(calculardora["multiplicacao"](34, 8)) # 42
 
 
 # ================calculardora===============
@@ -648,3 +648,69 @@ print(calculardora["multiplicacao"](34, 8)) # 42
 # 42
 # 26
 # 272
+
+# ============================== Gere, copie, mova, escreva e leia informações de arquivos externos =========================
+ 
+def ecriver_arquivo(texte):
+  archivo = open('arquivo_teste.txt', 'w') # cria um arquivo txt
+  archivo.write('Hola Mundo. \nBienvenidos a la clase de Python DIO Desenvolvimento.\n') # escreve no arquivo
+  archivo.write('Hola Mundo. \nterceiro linea escrita...\n ') # escreve no arquivo
+  archivo.write('Hola Mundo. \nquarta linea escrita...\n ') # escreve no arquivo
+  archivo.write(texte)
+  archivo.close() # fecha o arquivo
+
+
+
+
+def atualizar_arquivo(nome_arquivo, text):
+  archivo = open(nome_arquivo, 'a') # abre o arquivo txt
+  archivo.write(text + '\n') # escreve no arquivo
+  archivo.close() # fecha o arquivo
+
+
+
+
+def ler_arqiuivo(nome_arquivo):
+  # diretorio = "D:/DIO/Cloud Data Engineer DIO/arquivo_teste.txt" 
+  # print("================= lendo arquivo ================")
+  archivo = open(nome_arquivo, 'r') # abre o arquivo txt
+  texto = archivo.read() # lê o arquivo
+  print(texto) # imprime o conteúdo do arquivo
+  archivo.close() # fecha o arquivo
+
+
+    
+  #
+  
+  
+if __name__ == '__main__':
+  ler_arqiuivo('arquivo_teste.txt')
+  
+  
+  #Hola Mundo. 
+  # Bienvenidos a la clase de Python DIO Desenvolvimento.
+  # Hola Mundo. 
+  # terceiro linea escrita...
+  # Hola Mundo. 
+  # quarta linea escrita...
+  # Primeira linha escrita no arquivo.
+  # notas.text 
+  # aluno = 'Jhon Gil, nota:  \n20, 10, 15'   
+  # atualizar_arquivo('notas.txt', aluno)
+  
+  # Jhon Gil, nota:  
+  # 20, 10, 15
+  # Jhon Gil, nota:  
+  # 20, 10, 15
+  # Jhon Gil, nota:  
+  # 20, 10, 15
+
+  #ler_arqiuivo()
+  
+# Hola Mundo. 
+# Bienvenidos a la clase de Python DIO Desenvolvimento.
+# Hola Mundo. 
+# terceiro linea escrita...
+#  Hola Mundo. 
+# quarta linea escrita...
+#  Primeira linha escrita no arquivo.

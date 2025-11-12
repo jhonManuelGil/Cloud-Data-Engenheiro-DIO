@@ -1,0 +1,8 @@
+Hola Mundo. 
+Bienvenidos a la clase de Python DIO Desenvolvimento.
+Hola Mundo. 
+terceiro linea escrita...
+ Hola Mundo. 
+quarta linea escrita...
+ Primeira linha escrita no arquivo.
+notas.text
